@@ -462,11 +462,12 @@ def main(simulation_length=2000, forced_start_time=0, run_simu=True, run_postpro
                 hour = meteo.loc[t_caribu, ['hour']].iloc[0]
                 PARi_next_hours = meteo.loc[range(t_caribu, t_caribu + CARIBU_TIMESTEP), ['PARi']].sum().values[0]
 
-                if (t_caribu % CARIBU_TIMESTEP == 0) and (PARi_next_hours > 0):
-                    run_caribu = True
-                else:
-                    run_caribu = False
+                # if (t_caribu % CARIBU_TIMESTEP == 0) and (PARi_next_hours > 0):
+                #     run_caribu = True
+                # else:
+                #     run_caribu = False
 
+                run_caribu=False
                 caribu_facade_.run(run_caribu, energy=PARi, DOY=DOY, hourTU=hour, latitude=48.85, sun_sky_option='sky', heterogeneous_canopy=heterogeneous_canopy,
                                    plant_density=PLANT_DENSITY[1], inter_row=INTER_ROW)
 
