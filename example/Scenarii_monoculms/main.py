@@ -512,7 +512,7 @@ def main(simulation_length=2000, forced_start_time=0, run_simu=True, run_postpro
                                         # run CNWheat
                                         Tair = meteo.loc[t_elongwheat, 'air_temperature']
                                         Tsoil = meteo.loc[t_elongwheat, 'soil_temperature']
-                                        cnwheat_facade_.run(Tair, Tsoil, tillers_replications)
+                                        # cnwheat_facade_.run(Tair, Tsoil, tillers_replications)
 
                                     # append outputs at current step to global lists
                                     if (stored_times == 'all') or (t_cnwheat in stored_times):
@@ -1015,6 +1015,6 @@ def main(simulation_length=2000, forced_start_time=0, run_simu=True, run_postpro
 
 
 if __name__ == '__main__':
-    main(simulation_length=3000, forced_start_time=2997,
-         run_simu=True, run_postprocessing=True, generate_graphs=False, run_from_outputs=True,
+    main(simulation_length=3000, forced_start_time=0,
+         run_simu=True, run_postprocessing=True, generate_graphs=False, run_from_outputs=False,
          show_3Dplant=False, heterogeneous_canopy=True, METEO_FILENAME="meteo_PAR250.csv")
