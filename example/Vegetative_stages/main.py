@@ -676,7 +676,7 @@ def main(simulation_length, forced_start_time=0, run_simu=True, run_postprocessi
             plt.close()
 
         # 1) Comparison Dimensions with Ljutovac 2002
-        data_obs = pd.read_csv(r'inputs\Ljutovac2002.csv')
+        data_obs = pd.read_csv(os.path.join('inputs', 'Ljutovac2002.csv'))
         bchmk = data_obs
         res = pd.read_csv(os.path.join(OUTPUTS_DIRPATH, HIDDENZONES_OUTPUTS_FILENAME))
         res = res[(res['axis'] == 'MS') & (res['plant'] == 1) & ~np.isnan(res.leaf_Lmax)].copy()
